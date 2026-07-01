@@ -1,0 +1,252 @@
+* {
+    /* Prioritize terminal/cyberpunk fonts, fallback to standard monospace */
+    font-family: 'JetBrainsMono Nerd Font Mono', 'Orbitron', 'Courier New', monospace, FontAwesome;
+    font-size: 13px;
+    /* Subtle neon red CRT glow */
+    text-shadow: 0px 0px 3px rgba(255, 0, 51, 0.4); 
+}
+
+window#waybar {
+    background-color: rgba(8, 8, 8, 0.95); 
+    /*border: 2px solid #ff0033;              5px solid red outline on all sides */
+    padding: 5px;
+    color: #ff0033;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #0f0f0f;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0; /* Keep it sharp and blocky */
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ff0033;
+}
+
+#pulseaudio:hover {
+    background-color: #33000a;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #80001a; /* Dimmed red for inactive */
+}
+
+#workspaces button:hover {
+    background: rgba(255, 0, 51, 0.1);
+    color: #ff0033;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: #ff0033;
+    color: #000000; /* Black text on red background for high contrast */
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background-color: #ffffff; /* Stark white for system alerts */
+    color: #ff0033;
+}
+
+#mode {
+    background-color: #ff0033;
+    color: #000000;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* Unify all modules into the Arasaka color scheme */
+#custom-launcher,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 5px 2px;
+    background-color: #121212; /* Dark grey module background */
+    color: #ff0033;            /* Arasaka Red text */
+    border-left: 1px solid #33000a; /* Subtle separator */
+}
+
+#window,
+#workspaces {
+    margin: 5px 2px;
+}
+
+.modules-left > widget:first-child > #workspaces { margin-left: 0; }
+.modules-right > widget:last-child > #workspaces { margin-right: 0; }
+
+#clock {
+    background-color: #000000;
+    color: #ff0033;
+    font-weight: bold;
+    border: 1px solid #ff0033;
+}
+
+#battery.charging, #battery.plugged {
+    color: #000000;
+    background-color: #ff0033; /* Solid red when plugged in */
+}
+
+@keyframes blink {
+    to {
+        background-color: #ff0033;
+        color: #000000;
+    }
+}
+
+/* Aggressive flashing for critical battery */
+#battery.critical:not(.charging) {
+    background-color: #000000;
+    color: #ff0033;
+    border: 1px solid #ff0033;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 5px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #121212;
+    color: #ff0033;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #33000a;
+    color: #80001a;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: #ff0033;
+}
+
+#memory {
+    color: #cc0029;
+}
+
+#disk {
+    color: #b30024;
+}
+
+#backlight {
+    color: #ff335c;
+}
+
+#network {
+    color: #ff0033;
+}
+
+#network.disconnected {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+#pulseaudio {
+    color: #ff0033;
+}
+
+#pulseaudio.muted {
+    background-color: #121212;
+    color: #4d000f; /* Very dim red */
+}
+
+#wireplumber {
+    color: #ff0033;
+}
+
+#wireplumber.muted {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+#custom-media {
+    color: #000000;
+    background-color: #ff0033;
+    min-width: 100px;
+}
+#custom-launcher {
+  background-image: url('Arasakalogo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#temperature.critical {
+    background-color: #ffffff;
+    color: #ff0033;
+    font-weight: bold;
+}
+
+#tray {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ffffff;
+    color: #ff0033;
+}
+
+#idle_inhibitor {
+    background-color: #121212;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+#mpd.disconnected {
+    background-color: #ff0033;
+    color: #000000;
+}
+
+#mpd.stopped {
+    color: #4d000f;
+}
