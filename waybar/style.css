@@ -1,16 +1,15 @@
 * {
     /* Prioritize terminal/cyberpunk fonts, fallback to standard monospace */
     font-family: 'JetBrainsMono Nerd Font Mono', 'Orbitron', 'Courier New', monospace, FontAwesome;
-    font-size: 13px;
-    /* Subtle neon red CRT glow */
-    text-shadow: 0px 0px 3px rgba(255, 0, 51, 0.4); 
+    font-size: 11px; /* Retained: Reduced to fit 20px height */
+    /* Subtle neon green CRT glow */
+    text-shadow: 0px 0px 3px rgba(24, 138, 76, 0.4); 
 }
 
 window#waybar {
-    background-color: rgba(8, 8, 8, 0.95); 
-    /*border: 2px solid #ff0033;              5px solid red outline on all sides */
-    padding: 5px;
-    color: #ff0033;
+    background-color: #121212; 
+    padding: 0 5px; /* Retained: Removed vertical padding */
+    color: #188a4c;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -20,59 +19,64 @@ window#waybar.hidden {
 }
 
 window#waybar.termite {
-    background-color: #0f0f0f;
+    background-color: #121212;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: #121212;
     border: none;
 }
 
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
-    border-radius: 0; /* Keep it sharp and blocky */
+    border-radius: 0;
 }
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ff0033;
+    box-shadow: inset 0 -3px #188a4c;
 }
 
 #pulseaudio:hover {
-    background-color: #33000a;
+    background-color: #0c4725;
 }
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
-    color: #80001a; /* Dimmed red for inactive */
+    background-color: #082e18;/*transparent;*/
+    color: #8affb8; /* Dimmed accent for inactive */
+}
+
+#workspaces button.empty {
+    background-color: transparent; /* Removes the background */
+    color: #8affb8; 
 }
 
 #workspaces button:hover {
-    background: rgba(255, 0, 51, 0.1);
-    color: #ff0033;
+    background: rgba(24, 138, 76, 0.1);
+    color: #ffffff;
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #ff0033;
-    color: #000000; /* Black text on red background for high contrast */
+    background-color: #188a4c;
+    color: #121212;
     text-shadow: none;
     box-shadow: none;
 }
 
 #workspaces button.urgent {
-    background-color: #ffffff; /* Stark white for system alerts */
-    color: #ff0033;
+    background-color: #e0e0e0; 
+    color: #188a4c;
 }
 
 #mode {
-    background-color: #ff0033;
-    color: #000000;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #188a4c;
+    color: #121212;
+    box-shadow: inset 0 -3px #e0e0e0;
 }
 
-/* Unify all modules into the Arasaka color scheme */
+/* Unify all modules into the lighter black/green color scheme */
 #custom-launcher,
 #clock,
 #battery,
@@ -91,44 +95,43 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 5px 2px;
-    background-color: #121212; /* Dark grey module background */
-    color: #ff0033;            /* Arasaka Red text */
-    border-left: 1px solid #33000a; /* Subtle separator */
+    padding: 0 4px; /* Retained: Removed vertical padding */
+    background-color: #1a1a1a; 
+    color: #188a4c;            
+    border-left: 1px solid #082e18; /* Subtle separator */
 }
 
 #window,
 #workspaces {
-    margin: 5px 2px;
+    margin: 0 2px; /* Retained: Removed vertical margins */
 }
 
 .modules-left > widget:first-child > #workspaces { margin-left: 0; }
 .modules-right > widget:last-child > #workspaces { margin-right: 0; }
 
 #clock {
-    background-color: #000000;
-    color: #ff0033;
+    background-color: #1a1a1a;
+    color: #188a4c;
     font-weight: bold;
-    border: 1px solid #ff0033;
+    border: 1px solid #188a4c;
 }
 
 #battery.charging, #battery.plugged {
-    color: #000000;
-    background-color: #ff0033; /* Solid red when plugged in */
+    color: #121212;
+    background-color: #188a4c;
 }
 
 @keyframes blink {
     to {
-        background-color: #ff0033;
-        color: #000000;
+        background-color: #188a4c;
+        color: #121212;
     }
 }
 
-/* Aggressive flashing for critical battery */
 #battery.critical:not(.charging) {
-    background-color: #000000;
-    color: #ff0033;
-    border: 1px solid #ff0033;
+    background-color: #1a1a1a;
+    color: #188a4c;
+    border: 1px solid #188a4c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -141,112 +144,82 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #ff0033;
-    color: #000000;
+    background-color: #188a4c;
+    color: #121212;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #121212;
-    color: #ff0033;
+    background-color: #1a1a1a;
+    color: #188a4c;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #33000a;
-    color: #80001a;
+    background-color: #082e18;
+    color: #0c4725;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #121212;
 }
 
-#cpu {
-    color: #ff0033;
-}
-
-#memory {
-    color: #cc0029;
-}
-
-#disk {
-    color: #b30024;
-}
-
-#backlight {
-    color: #ff335c;
-}
-
-#network {
-    color: #ff0033;
+#cpu, #memory, #disk, #backlight, #network, #pulseaudio, #wireplumber {
+    color: #188a4c;
 }
 
 #network.disconnected {
-    background-color: #ff0033;
-    color: #000000;
-}
-
-#pulseaudio {
-    color: #ff0033;
+    background-color: #188a4c;
+    color: #121212;
 }
 
 #pulseaudio.muted {
-    background-color: #121212;
-    color: #4d000f; /* Very dim red */
-}
-
-#wireplumber {
-    color: #ff0033;
+    background-color: #1a1a1a;
+    color: #08331a; /* Very dim green */
 }
 
 #wireplumber.muted {
-    background-color: #ff0033;
-    color: #000000;
+    background-color: #188a4c;
+    color: #121212;
 }
 
 #custom-media {
-    color: #000000;
-    background-color: #ff0033;
+    color: #121212;
+    background-color: #188a4c;
     min-width: 100px;
 }
+
 #custom-launcher {
   background-image: url('Arasakalogo.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 #temperature.critical {
-    background-color: #ffffff;
-    color: #ff0033;
+    background-color: #e0e0e0;
+    color: #188a4c;
     font-weight: bold;
 }
 
-#tray {
-    background-color: #000000;
-}
+#tray { background-color: #1a1a1a; }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
+#tray > .passive { -gtk-icon-effect: dim; }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #ffffff;
-    color: #ff0033;
+    background-color: #e0e0e0;
+    color: #188a4c;
 }
 
-#idle_inhibitor {
-    background-color: #121212;
-}
+#idle_inhibitor { background-color: #1a1a1a; }
 
 #idle_inhibitor.activated {
-    background-color: #ff0033;
-    color: #000000;
+    background-color: #188a4c;
+    color: #121212;
 }
 
 #mpd.disconnected {
-    background-color: #ff0033;
-    color: #000000;
+    background-color: #188a4c;
+    color: #121212;
 }
 
-#mpd.stopped {
-    color: #4d000f;
-}
+#mpd.stopped { color: #08331a; }
