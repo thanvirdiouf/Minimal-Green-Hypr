@@ -12,15 +12,15 @@
         "hyprland/workspaces" 
     ],
     "modules-center": [
-        "clock",
-        "memory"
+        "clock"
     ],
     "modules-right": [
         "pulseaudio",
         "custom/monitor-brightness",
-        "cpu",
-        "temperature",
         "backlight",
+        "cpu",
+        "memory",
+        "temperature",
         "battery",
         "tray",
         "custom/power"
@@ -92,7 +92,8 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip-format": "$HOME.config/waybar/scripts/cpu-term.sh"
+        "tooltip": true,
+        "exec": "$HOME/.config/waybar/scripts/cpu-term.sh"
     },
     "memory": {
         "format": "{}% ",

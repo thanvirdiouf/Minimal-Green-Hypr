@@ -44,8 +44,8 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: #082e18;/*transparent;*/
-    color: #8affb8; /* Dimmed accent for inactive */
+    background-color: #082e18;
+    color: #8affb8;
 }
 
 #workspaces button.empty {
@@ -111,7 +111,7 @@ button:hover {
 
 #clock {
     background-color: #1a1a1a;
-    color: #188a4c;
+    color: #8affb8;
     font-weight: bold;
     border: 1px solid #188a4c;
 }
@@ -163,7 +163,7 @@ label:focus {
 }
 
 #cpu, #memory, #disk, #backlight, #network, #pulseaudio, #wireplumber {
-    color: #188a4c;
+    color: #8affb8;
 }
 
 #network.disconnected {

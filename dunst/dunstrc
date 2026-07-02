@@ -1,0 +1,20 @@
+[global]
+frame_color = "#00AF60"
+separator_color = frame
+highlight = "#00AF60"
+corner_radius = 10
+
+[urgency_low]
+background = "#090909"
+foreground = "#E0E0E0"
+frame_color = "#8B0000"
+
+[urgency_normal]
+background = "#090909"
+foreground = "#E0E0E0"
+frame_color = "#00AF60"
+
+[urgency_critical]
+background = "#E50000"
+foreground = "#090909"
+frame_color = "#00AF60"
