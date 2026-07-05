@@ -3,6 +3,17 @@ frame_color = "#00AF60"
 separator_color = frame
 highlight = "#00AF60"
 corner_radius = 10
+mouse_left_click = context, close_current
+mouse_middle_click = do_action, close_current
+mouse_right_click = close_all
+follow = mouse
+force_xwayland = false
+min_icon_size = 64
+max_icon_size = 128
+enable_posix_regex = true
+
+[experimental]
+per_monitor_dpi = true
 
 [urgency_low]
 background = "#090909"

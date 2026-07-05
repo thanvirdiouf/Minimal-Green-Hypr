@@ -249,6 +249,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "zen" },
+	float = true,
+	size = "1240 800",
+})
+
+hl.window_rule({
 	match = { class = "xdg-desktop-portal-gtk" },
 	float = true,
 	size = "1000 1000",
