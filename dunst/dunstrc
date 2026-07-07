@@ -29,3 +29,7 @@ frame_color = "#00AF60"
 background = "#E50000"
 foreground = "#090909"
 frame_color = "#00AF60"
+
+[kdeconnect]
+appname = "*KDE Connect*"
+markup = strip
