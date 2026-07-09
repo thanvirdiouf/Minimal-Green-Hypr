@@ -9,10 +9,13 @@
     "spacing": 10, 
     "modules-left": [
         "custom/launcher",
-        "hyprland/workspaces" 
+        "hyprland/workspaces", 
+        "sway/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+        "hyprland/window",
+        "sway/window"
     ],
     "modules-right": [
         "pulseaudio",

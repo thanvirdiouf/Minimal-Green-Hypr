@@ -169,7 +169,7 @@ hl.bind(
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu .. " -show run -theme ~/.config/rofi/launchers/type-5/style-5.rasi"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu .. " -show run -theme ~/.config/rofi/minigreen.rasi"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + BackSpace", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-1/powermenu.sh"))
