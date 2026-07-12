@@ -249,6 +249,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	match = { class = "kitty" },
+	float = true,
+	size = "1000 700",
+})
+
+hl.window_rule({
 	match = { class = "zen" },
 	float = true,
 	size = "1240 800",

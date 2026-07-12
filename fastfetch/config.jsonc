@@ -1,0 +1,52 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    //"type": "kitty-direct",
+    "source": "/home/spectre/.config/fastfetch/babyjjk.png",
+    "width": 30,
+   // "height": 25,
+   // "padding": {
+   //   "top": 1,
+   //   "left": 2,
+   //   "right": 2
+   // }
+  }, 
+  "display": {
+    "separator": " : ",
+    "color": {
+            "keys": "red",
+            "title": "red"
+        }
+  },
+  "modules": [
+    //{"key": "red"},
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "break",
+    "shell",
+//    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "icons",
+    "cursor",
+    "terminalfont",
+    "break",
+    "cpu",
+    "gpu",
+    "memory",
+//    "swap",
+    "disk",
+//    "localip",
+    "battery",
+    "poweradapter",
+//   "locale",
+    "break",
+    "colors"
+  ]
+}
