@@ -12,6 +12,10 @@ This repository currently includes configuration files for the following:
 * **[Waybar](waybar/)**: Status bar.
 * **[Kitty](kitty/)**: Terminal emulator.
 * **[Dunst](dunst/)**: Notification daemon.
+* **[Rofi](rofi/)**: Menu configurer.
+* **[Fastfetch](fastfetch/)**: System info presenter.
+* **[mpv](mpv/)**: Media player.
+
 
 ## License
 
