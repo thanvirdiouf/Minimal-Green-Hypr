@@ -172,7 +172,7 @@ hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu .. " -show run -theme ~/.config/rofi/minigreen.rasi"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind(mainMod .. " + BackSpace", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-1/powermenu.sh"))
+hl.bind(mainMod .. " + BackSpace", hl.dsp.exec_cmd("~/.config/rofi/greenpower.sh"))
 hl.bind("ALT + Return", hl.dsp.window.fullscreen())
 hl.bind(
 	mainMod .. " + SHIFT + F23",
