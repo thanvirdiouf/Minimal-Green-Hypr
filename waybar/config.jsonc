@@ -81,7 +81,7 @@
     },
     "custom/launcher": {
         "format": " ",
-        "on-click": "rofi -show drun -theme ~/.config/rofi/launchers/type-5/style-5.rasi ",
+        "on-click": "rofi -show drun -theme ~/.config/rofi/minigreen.rasi ",
         "tooltip": false
     },
     "tray": {
@@ -176,6 +176,6 @@
     "custom/power": {
         "format" : "⏻ ",
         "tooltip": false,
-        "on-click": "$HOME/.config/rofi/powermenu/type-1/powermenu.sh"
+        "on-click": "$HOME/.config/rofi/greenpower.sh"
     }
 }

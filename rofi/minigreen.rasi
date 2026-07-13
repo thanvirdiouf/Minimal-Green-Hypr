@@ -27,6 +27,9 @@ mainbox {
     border: 0px;
 }
 
+configuration {
+    show-icons: true;
+}
 listview {
     background-color: @accent;
     spacing: 2px;
@@ -37,6 +40,7 @@ element {
     text-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
+    spacing: 10px;
 }
 
 element selected {
