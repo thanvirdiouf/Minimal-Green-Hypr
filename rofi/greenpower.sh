@@ -23,7 +23,7 @@ chosen=$(printf "%s\n%s\n%s\n%s" "$POWEROFF" "$REBOOT" "$SUSPEND" "$LOGOUT" | ro
 confirm_action() {
   local action=$1
   # Overrides window to be even smaller for the Yes/No prompt
-  local res=$(printf "No\nYes" | rofi -dmenu -i \
+  local res=$(printf "Yes\nNo" | rofi -dmenu -i \
     -theme "$THEME" \
     -theme-str 'window {width: 15%; height: 25%; background-image: none; padding: 1%;} entry {enabled: false;} listview {lines: 2;}' \
     -p "$action?")
