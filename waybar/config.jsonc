@@ -46,6 +46,10 @@
             "*": 9 
         }
     },
+    "hyprland/window":	{
+	"format": "{title}",
+	"max-length":	30
+	},
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
