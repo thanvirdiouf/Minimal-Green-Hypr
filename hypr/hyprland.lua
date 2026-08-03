@@ -9,7 +9,7 @@ hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@60",
 	position = "0x0",
-	scale = "1.25",
+	scale = "1",
 })
 
 local terminal = "kitty"
@@ -19,7 +19,8 @@ local menu = "rofi -show drun"
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/xdg-desktop-portal-hyprland & dunst & kdeconnect-indicator & blueman-applet & bathealth &")
 	hl.exec_cmd("nm-applet &")
-	hl.exec_cmd("waybar & hyprpaper &")
+	hl.exec_cmd("waybar &")
+	hl.exec_cmd("hyprpaper &")
 	hl.exec_cmd("systemctl user start hyprpolkitagent &")
 	hl.exec_cmd("wl-paste type text watch cliphist store")
 	hl.exec_cmd("wl-paste type image watch cliphist store")
