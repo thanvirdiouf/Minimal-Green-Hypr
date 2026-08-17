@@ -17,19 +17,22 @@ local fileManager = "dolphin"
 local menu = "rofi -show drun"
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("/usr/lib/xdg-desktop-portal-hyprland & dunst & kdeconnect-indicator & blueman-applet & bathealth &")
-	hl.exec_cmd("nm-applet &")
-	hl.exec_cmd("waybar &")
-	hl.exec_cmd("hyprpaper &")
-	hl.exec_cmd("systemctl user start hyprpolkitagent &")
+	hl.exec_cmd("/usr/lib/xdg-desktop-portal-hyprland")
+	hl.exec_cmd("dunst")
+	hl.exec_cmd("kdeconnect-indicator")
+	hl.exec_cmd("blueman-applet")
+	hl.exec_cmd("bathealth")
+	hl.exec_cmd("nm-applet")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("wl-paste type text watch cliphist store")
 	hl.exec_cmd("wl-paste type image watch cliphist store")
-	--	hl.exec_cmd("dbus-update-activation-environment systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
-	hl.exec_cmd("gamemoded &")
-	hl.exec_cmd("rfkill unblock bluetooth &")
+	hl.exec_cmd("gamemoded")
+	hl.exec_cmd("rfkill unblock bluetooth")
 end)
 
 hl.env("XCURSOR_SIZE", "24")
@@ -45,11 +48,35 @@ hl.config({
 	},
 })
 
-hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
-hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
-hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-hl.permission("/usr/sbin/hyprlock", "plugin", "allow")
-hl.permission("/usr/sbin/hyprlock", "screencopy", "allow")
+hl.permission({
+	binary = "/usr/(bin|local/bin)/grim",
+	type = "screencopy",
+	mode = "allow",
+})
+
+hl.permission({
+	binary = "/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland",
+	type = "screencopy",
+	mode = "allow",
+})
+
+hl.permission({
+	binary = "/usr/(bin|local/bin)/hyprpm",
+	type = "plugin",
+	mode = "allow",
+})
+
+hl.permission({
+	binary = "/usr/sbin/hyprlock",
+	type = "plugin",
+	mode = "allow",
+})
+
+hl.permission({
+	binary = "/usr/sbin/hyprlock",
+	type = "screencopy",
+	mode = "allow",
+})
 
 hl.config({
 	general = {
